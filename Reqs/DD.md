@@ -1,8 +1,3 @@
-Absolutely—here’s your text **cleanly formatted in Markdown**, ready to paste into your repo:
-
----
-
-```markdown
 # 📘 StudySync – Design Document (Deliverable 2)
 
 **Course:** CEN4010 – Software Engineering  
@@ -28,12 +23,14 @@ Model-View-Controller (MVC)
 - **View:** Renders dynamic HTML/CSS for user interaction.
 - **Controller:** Handles incoming requests, updates the model, and selects the appropriate view.
 
+```mermaid
+graph LR
+  C[Client Browser] -->|HTTP Requests| V[View]
+  V -->|Updates| M[Model]
+  M -->|Data| DB[(Database)]
+  V --> C
 ```
 
-\[Diagram Placeholder: High-Level Architecture Diagram]
-*Insert a simple diagram showing how Model, View, and Controller interact.*
-
-```
 
 ---
 
@@ -41,10 +38,36 @@ Model-View-Controller (MVC)
 
 ### 3.1 Use Case Diagram
 
-```
+``` mermaid
 
-\[Diagram Placeholder: Use Case Diagram]
+%%{init: {"theme": "default"}}%%
+flowchart TD
+    A[Start: Access Registration Page] --> B[Enter Name, Email, and Password]
+    B --> C{Is Email Format .edu?}
+    C -- No --> D[Show Error: Must Use .edu Email]
+    D --> Z[End: Registration Blocked]
 
+    C -- Yes --> E{Is Email Already Registered?}
+    E -- Yes --> F[Show Prompt: Log In or Reset Password]
+    F --> Z
+
+    E -- No --> G[Send Verification Email with Link]
+    G --> H[User Clicks Verification Link]
+    H --> I[System Activates Account]
+    I --> J[End: Account Activated & Ready to Log In]
+
+    %% Styling for light theme with light blue background
+    style A fill:#e6f2ff,stroke:#3399cc
+    style B fill:#e6f2ff,stroke:#3399cc
+    style C fill:#d9ecff,stroke:#3399cc
+    style D fill:#ffdddd,stroke:#cc0000,color:#000
+    style E fill:#d9ecff,stroke:#3399cc
+    style F fill:#fff0b3,stroke:#cc9900,color:#000
+    style G fill:#e6f2ff,stroke:#3399cc
+    style H fill:#e6f2ff,stroke:#3399cc
+    style I fill:#ddffdd,stroke:#33cc33,color:#000
+    style J fill:#ddffdd,stroke:#33cc33,color:#000
+    style Z fill:#f2f2f2,stroke:#999,stroke-dasharray: 4
 ```
 
 **Description:**  
