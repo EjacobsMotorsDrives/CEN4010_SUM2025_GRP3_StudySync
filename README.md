@@ -25,8 +25,8 @@ Initially built with a **frontend-only simulation using CSV files** in VSCode ED
 
 - [x] Project Proposal (submitted: May 23, 2025)
 - [x] Software Requirements Document (SRD) — ✅ Completed and converted to Markdown
-- [ ] Software Design Document (SDD) — *Not started*
-- [ ] Coding — *No source code implemented yet*
+- [ ] Software Design Document (SDD) — *DOING*
+- [ ] Coding — *DOING*
 - [ ] Testing — *Pending implementation*
 - [ ] Deployment — *Pending backend selection*
 
@@ -44,7 +44,7 @@ Initially built with a **frontend-only simulation using CSV files** in VSCode ED
 - [ ] Document external API integration details (Zoom, Slack)
 
 ### 💻 Development Phase
-- [ ] Set up VSCode EDU frontend project
+- [X] Set up VSCode EDU frontend project #DONE
 - [ ] Simulate CSV file handling for fake backend
 - [ ] Build basic UI: Login, Register, Group Browser
 - [ ] Implement UC1: Register + email format check
@@ -57,7 +57,7 @@ Initially built with a **frontend-only simulation using CSV files** in VSCode ED
 - [ ] Explore GoDaddy deployment options
 
 ### ✅ Submission Timeline
-- [ ] SRD Due: ✅ Submitted `June 14, 2025`
+- [X] SRD Due: ✅ Submitted `June 14, 2025`
 - [ ] Frontend Demo Due: `July 1, 2025`
 - [ ] Backend Integration: `July 14, 2025`
 - [ ] User Testing: `July 21, 2025`
@@ -65,5 +65,4 @@ Initially built with a **frontend-only simulation using CSV files** in VSCode ED
 
 ---
 
-## 📂 Suggested Logseq Structure
 
