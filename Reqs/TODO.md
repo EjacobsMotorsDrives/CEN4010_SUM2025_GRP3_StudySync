@@ -25,6 +25,59 @@
 
 ---
 
+## 🟢 Functional Requirements Gap Analysis
+
+Below is a detailed comparison of **SRD requirements vs. current implementation**:
+
+| **Requirement**                        | **Status**                           |
+|----------------------------------------|---------------------------------------|
+| **FR1 – User Management**              | 🟡 *Partially Implemented*            |
+| FR1.1 Register with `.edu` email       | ❌ Not validated yet                  |
+| FR1.2 Email verification link          | ❌ Not implemented                    |
+| FR1.3 Secure login                     | ❌ Not implemented                    |
+| FR1.4 Password reset                   | ❌ Not implemented                    |
+| **FR2 – Study Group Management**       | 🟡 *Partially Implemented*            |
+| FR2.1 Create group                     | 🟡 Form UI present                    |
+| FR2.2 Browse groups                    | ✅ Implemented with CSV simulation    |
+| FR2.3 Edit/delete groups               | ❌ Not implemented                    |
+| FR2.4 Join/leave groups                | 🟡 Join simulated only                |
+| **FR3 – Search & Filtering**           | ✅ Implemented in groups.js           |
+| **FR4 – Scheduling and Notifications** | ❌ Not implemented                    |
+| FR4.1 Shared calendar                  | ❌ Not implemented                    |
+| FR4.2 Meeting reminders                | ❌ Not implemented                    |
+| FR4.3 Notifications                    | ❌ Not implemented                    |
+| **FR5 – Communication**                | ❌ Not implemented                    |
+| FR5.1 Message board per group          | ❌ Not implemented                    |
+| FR5.2 Delete own messages              | ❌ Not implemented                    |
+| **FR6 – External Platform Integration**| ❌ Not implemented                    |
+| FR6.1 Links to Zoom/Slack              | ❌ Not implemented                    |
+| FR6.2 Associate Zoom/Slack ID          | ❌ Not implemented                    |
+| **FR7 – Development/Testing Support**  | ✅ CSV simulation working             |
+
+---
+
+### 🟢 Priority Next Steps
+
+1. **Implement simulated login**
+   - Use LocalStorage to track "logged in" user
+   - Validate `.edu` email format on registration
+2. **Build group membership persistence**
+   - Store joined groups in LocalStorage
+   - Display joined groups in dashboard
+3. **Add meeting scheduling**
+   - Form to create meetings
+   - Show scheduled meetings
+4. **Implement message board**
+   - Allow posting messages
+   - Save messages in LocalStorage
+5. **Plan backend migration**
+   - Define MySQL schema
+   - Select Node.js or PHP stack
+
+---
+
+
+
 ## 🟢 Phase 1: Design
 
 - [ ] Draft Software Design Document (SDD)
