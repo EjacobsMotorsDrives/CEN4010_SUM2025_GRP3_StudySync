@@ -89,6 +89,8 @@ Shows how users (Students, Administrators) interact with the system: creating ac
 - `StudyGroup`: Represents a group, members, and group details.
 - `Message`: Contains chat/message data.
 - `Event`: Handles scheduled study sessions.
+- `Calendar`: Manages calendar display and navigation.
+- `Notification`: Handles reminders and alerts.
 
 ---
 
@@ -102,6 +104,8 @@ Shows how users (Students, Administrators) interact with the system: creating ac
 
 **Example:**  
 User joining a study group.
+
+User ->
 
 ---
 
@@ -123,6 +127,8 @@ Workflow of creating a new study group.
 - **User Records:** Stored in relational tables (MySQL).
 - **Group Membership:** Many-to-many mapping between users and groups.
 - **Messages:** Stored with timestamps and sender references.
+- **Events:** Stored as JSON objects with date, time, title and group reference.
+- **Notifications:** Queue-based structure for pending reminders.
 
 ---
 
@@ -134,6 +140,12 @@ Workflow of creating a new study group.
 - **Recommendation Algorithm:**  
   Simple matching based on shared courses/interests.
 
+- **Calendar Generation Algorithm**  
+  Calculates the first day of the month, and generates a grid layout with proper day alignment.
+
+- **Reminder Algorithm:**  
+  Checks the current time against the event times, minus the reminder offset, to trigger notifications. 
+  
 ---
 
 ## 6. Interface Design
@@ -144,7 +156,15 @@ Workflow of creating a new study group.
 - Group Directory
 - Group Details View
 - Chat Interface
+- Calendar View
+- Event Creation Form
 
+**Calendar Interface:**
+- Monthly grid view with navigation
+- Event indicators (with dots/markings)
+- Add Event button with form
+- "Upcoming Meetings" sidebar
+  
 ```
 
 \[Insert screenshots or links to Figma/Mockup]
