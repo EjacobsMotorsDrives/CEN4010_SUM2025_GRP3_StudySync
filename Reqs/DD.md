@@ -107,8 +107,8 @@ User joining a study group.
 
 User scheduling an event for a study group.
 
+![image](https://github.com/user-attachments/assets/73ca1c68-50e8-43a0-9175-d178c1c1005b)
 
-![image](https://github.com/user-attachments/assets/871b3f02-e187-4513-be67-995bc97aaf57)
 
 
 ---
