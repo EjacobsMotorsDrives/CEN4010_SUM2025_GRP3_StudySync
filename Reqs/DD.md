@@ -106,6 +106,8 @@ Shows how users (Students, Administrators) interact with the system: creating ac
 User joining a study group.
 
 User scheduling an event for a study group.
+
+
 ![image](https://github.com/user-attachments/assets/871b3f02-e187-4513-be67-995bc97aaf57)
 
 
