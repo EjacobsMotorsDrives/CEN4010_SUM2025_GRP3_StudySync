@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>StudySync</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StudySync - Login</title>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
 <header>
@@ -22,15 +22,22 @@
   </nav>
 </header>
 
-  <main id="content">
-    <h2>Welcome to StudySync</h2>
-    <p>Select an option from the navigation menu to get started.</p>
+  <main>
+    <h2>Login</h2>
+    <form id="login-form">
+  <label>Email: <input type="email" id="login-email" required></label><br>
+  <label>Password: <input type="password" id="login-password" required></label><br>
+  <button type="submit">Login</button>
+</form>
+
+    <p>
+      Don’t have an account? <a href="register.html">Register here</a>.
+    </p>
   </main>
 
   <footer>
     <p>&copy; 2025 StudySync</p>
   </footer>
-
-  <script src="app.js"></script>
+  <script src="auth.js"></script>
 </body>
 </html>
