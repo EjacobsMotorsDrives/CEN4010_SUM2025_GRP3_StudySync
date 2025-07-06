@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StudySync - Create Group</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>StudySync</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="groups.html">Browse Groups</a></li>
+          <li><a href="create-group.html">Create Group</a></li>
+          <li><a href="calendar.html">Calendar</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="login.html">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h2>Create a New Study Group</h2>
+      <form id="create-group-form">
+        <label
+          >Group Name:<br />
+          <input type="text" id="group-name" required /> </label
+        ><br /><br />
+
+        <label
+          >Course or Topic:<br />
+          <input type="text" id="group-course" required /> </label
+        ><br /><br />
+
+        <label
+          >Meeting Type:<br />
+          <select id="group-meeting" required>
+            <option value="">Select...</option>
+            <option value="In-person">In-Person</option>
+            <option value="Online">Online</option>
+          </select> </label
+        ><br /><br />
+
+        <label
+          >Description:<br />
+          <textarea id="group-description" rows="4" required></textarea></label
+        ><br /><br />
+
+        <button type="submit">Create Group</button>
+      </form>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 StudySync</p>
+    </footer>
+
+    <script src="create-group.js"></script>
+  </body>
+</html>

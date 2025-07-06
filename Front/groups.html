@@ -1,47 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>StudySync - Browse Groups</title>
-  <link rel="stylesheet" href="styles.css"/>
-</head>
-<body>
-  <header>
-    <h1>StudySync</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="dashboard.html">Dashboard</a></li>
-        <li><a href="groups.html">Browse Groups</a></li>
-        <li><a href="create-group.html">Create Group</a></li>
-        <li><a href="login.html">Login</a></li>
-        <li><a href="register.html">Register</a></li>
-        <li><a href="login.html">Logout</a></li>
-      </ul>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StudySync - Browse Groups</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>StudySync</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="groups.html">Browse Groups</a></li>
+          <li><a href="create-group.html">Create Group</a></li>
+          <li><a href="calendar.html">Calendar</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="login.html">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <main>
-    <h2>Browse Study Groups</h2>
-    <form id="search-form">
-      <label>Search by Course or Topic:<br/>
-        <input type="text" id="search-query" placeholder="e.g., Calculus, JavaScript">
-      </label>
-      <button type="submit">Search</button>
-    </form>
+    <main>
+      <h2>Browse Study Groups</h2>
+      <form id="search-form">
+        <label
+          >Search by Course or Topic:<br />
+          <input
+            type="text"
+            id="search-query"
+            placeholder="e.g., Calculus, JavaScript"
+          />
+        </label>
+        <button type="submit">Search</button>
+      </form>
 
-    <section id="group-list">
-      <!-- Groups will be loaded here dynamically -->
-    </section>
-  </main>
+      <section id="group-list">
+        <!-- Groups will be loaded here dynamically -->
+      </section>
+    </main>
 
-  <footer>
-    <p>&copy; 2025 StudySync</p>
-  </footer>
+    <footer>
+      <p>&copy; 2025 StudySync</p>
+    </footer>
 
-  <script src="groups.js"></script>
-  <script src="auth.js"></script>
-
-</body>
+    <script src="groups.js"></script>
+    <script src="auth.js"></script>
+  </body>
 </html>

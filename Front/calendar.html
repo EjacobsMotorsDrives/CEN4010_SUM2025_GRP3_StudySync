@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StudySync - Calendar</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="calendar.css"/>
+</head>
+<body>
+  <header>
+    <h1>StudySync</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="groups.html">Browse Groups</a></li>
+        <li><a href="create-group.html">Create Group</a></li>
+        <li><a href="calendar.html">Calendar</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="login.html">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="calendar-container">
+      <div class="calendar-main">
+        <div class="calendar-header">
+          <h2 id="current-month">Loading...</h2>
+          <button onclick="showAddMeeting()">+ Schedule Meeting</button>
+        </div>
+
+        <table class="calendar-table">
+          <thead>
+            <tr>
+              <th>Sun</th>
+              <th>Mon</th>
+              <th>Tue</th>
+              <th>Wed</th>
+              <th>Thu</th>
+              <th>Fri</th>
+              <th>Sat</th>
+            </tr>
+          </thead>
+          <tbody id="calendar-body">
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sidebar">
+        <h3>Upcoming Meetings</h3>
+        <div id="upcoming-meetings">
+          <p>Loading meetings...</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="meeting-form" class="meeting-form" style="display: none;">
+      <h3>Schedule Group Meeting</h3>
+      
+      <label>Meeting Title:<br/>
+        <input type="text" id="meeting-title" required>
+      </label><br/><br/>
+
+      <label>Select Group:<br/>
+        <select id="meeting-group" required>
+          <option value="">Loading groups...</option>
+        </select>
+      </label><br/><br/>
+
+      <label>Date:<br/>
+        <input type="date" id="meeting-date" required>
+      </label><br/><br/>
+
+      <label>Time:<br/>
+        <input type="time" id="meeting-time" required>
+      </label><br/><br/>
+
+      <label>Duration:<br/>
+        <select id="meeting-duration">
+          <option value="60">1 hour</option>
+          <option value="120" selected>2 hours</option>
+          <option value="180">3 hours</option>
+        </select>
+      </label><br/><br/>
+
+      <label>Meeting Type:<br/>
+        <select id="meeting-type">
+          <option value="Online">Online</option>
+          <option value="In-Person">In-Person</option>
+        </select>
+      </label><br/><br/>
+
+      <label>Location/Link:<br/>
+        <input type="text" id="meeting-location" placeholder="Zoom Room 123">
+      </label><br/><br/>
+
+      <button onclick="addMeeting()">Schedule Meeting</button>
+      <button onclick="hideAddMeeting()">Cancel</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 StudySync</p>
+  </footer>
+
+  <script src="calendar.js"></script>
+</body>
+</html>
