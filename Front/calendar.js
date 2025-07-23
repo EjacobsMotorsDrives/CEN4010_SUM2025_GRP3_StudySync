@@ -1,5 +1,4 @@
-// Calendar for StudySync - Group Integration
-// Enhanced by Joseph Woolley with notification system
+// Calendar for StudySync - Group Integration - Joseph Woolley
 let meetings = [];
 let userGroups = [];
 
@@ -247,7 +246,6 @@ function initializeNotifications() {
   
   // Check for due reminders every minute
   setInterval(checkReminders, 60000);
-  console.log("Notification system initialized");
 }
 
 // Schedule reminders for a meeting
@@ -270,7 +268,6 @@ function scheduleReminders(meeting) {
         sent: false
       });
       localStorage.setItem("meeting_reminders", JSON.stringify(reminders));
-      console.log(`Reminder scheduled: ${meeting.title} - ${minutesBefore} min before`);
     }
   });
 }
@@ -301,10 +298,9 @@ function checkReminders() {
       showInAppNotification("Meeting Reminder", reminder.message);
       
       reminder.sent = true;
-      console.log("Reminder sent:", reminder.message);
     }
     
-    // Keep reminders for 24 hours after sending, then clean up
+    // Keep reminders for 24 hours after sending
     const oneDayAfter = new Date(reminderTime.getTime() + 86400000);
     if (!reminder.sent || now < oneDayAfter) {
       pendingReminders.push(reminder);
@@ -362,5 +358,5 @@ function showInAppNotification(title, message) {
 window.onload = function() {
   loadMeetings();
   loadUserGroups();
-  initializeNotifications(); // ENHANCED: Initialize notification system
+  initializeNotifications(); 
 };
