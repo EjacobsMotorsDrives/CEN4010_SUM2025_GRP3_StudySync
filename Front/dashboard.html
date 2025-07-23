@@ -53,5 +53,44 @@
 
     <script src="auth.js"></script>
     <script src="dashboard.js"></script>
+    <script>
+function showPageNotification(message) {
+  let notifyDiv = document.getElementById("page-notify");
+  if (!notifyDiv) {
+    notifyDiv = document.createElement("div");
+    notifyDiv.id = "page-notify";
+    notifyDiv.style.cssText = `
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #dc3545;
+      color: white;
+      padding: 15px;
+      border-radius: 5px;
+      z-index: 9999;
+      max-width: 300px;
+    `;
+    document.body.appendChild(notifyDiv);
+  }
+  
+  notifyDiv.innerHTML = `${message} <button onclick="this.parentElement.remove()" style="float:right;background:none;border:none;color:white;">×</button>`;
+}
+
+if (localStorage.getItem("currentUser")) {
+  setInterval(() => {
+    const reminders = JSON.parse(localStorage.getItem("meeting_reminders") || "[]");
+    const now = new Date();
+    
+    reminders.forEach(reminder => {
+      if (new Date(reminder.reminderTime) <= now && !reminder.sent) {
+        showPageNotification(reminder.message);
+        reminder.sent = true;
+      }
+    });
+    
+    localStorage.setItem("meeting_reminders", JSON.stringify(reminders));
+  }, 10000);
+}
+</script>
   </body>
 </html>

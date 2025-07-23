@@ -1,4 +1,5 @@
 // Calendar for StudySync - Group Integration
+// Enhanced by Joseph Woolley with notification system
 let meetings = [];
 let userGroups = [];
 
@@ -137,11 +138,23 @@ function showUpcomingMeetings() {
     let group = userGroups.find(g => g.id === meeting.groupId);
     let groupName = group ? group.name : "Unknown Group";
     
+    // Date display with Today/Tomorrow labels
+    const meetingDate = new Date(meeting.date);
+    const todayDate = new Date();
+    const tomorrow = new Date(todayDate.getTime() + 86400000);
+    
+    let dateDisplay = meeting.date;
+    if (meetingDate.toDateString() === todayDate.toDateString()) {
+      dateDisplay = "Today";
+    } else if (meetingDate.toDateString() === tomorrow.toDateString()) {
+      dateDisplay = "Tomorrow";
+    }
+    
     meetingDiv.innerHTML = 
-      "<div>🕐 " + meeting.time + "</div>" +
+      "<div>🕐 " + meeting.time + " - " + dateDisplay + "</div>" +
       "<div>" + meeting.title + "</div>" +
       "<div>Group: " + groupName + "</div>" +
-      "<div>" + meeting.location + "</div>";
+      "<div>" + (meeting.location || 'Location TBD') + "</div>";
     
     sidebar.appendChild(meetingDiv);
   });
@@ -203,6 +216,10 @@ function addMeeting() {
   
   meetings.push(meeting);
   saveMeetings();
+  
+  // Schedule reminders for this meeting
+  scheduleReminders(meeting);
+  
   showCalendar();
   hideAddMeeting();
   
@@ -219,8 +236,131 @@ function deleteMeeting(meetingId) {
   }
 }
 
+// Initialize notification system
+function initializeNotifications() {
+  // Request notification permission if not already granted
+  if ("Notification" in window && Notification.permission === "default") {
+    Notification.requestPermission().then(permission => {
+      console.log("Notification permission:", permission);
+    });
+  }
+  
+  // Check for due reminders every minute
+  setInterval(checkReminders, 60000);
+  console.log("Notification system initialized");
+}
+
+// Schedule reminders for a meeting
+function scheduleReminders(meeting) {
+  const meetingTime = new Date(`${meeting.date}T${meeting.time}`);
+  const reminderTimes = [15, 60]; // 15 minutes and 1 hour before
+  
+  reminderTimes.forEach(minutesBefore => {
+    const reminderTime = new Date(meetingTime.getTime() - (minutesBefore * 60000));
+    
+    // Only schedule future reminders
+    if (reminderTime > new Date()) {
+      const reminders = JSON.parse(localStorage.getItem("meeting_reminders") || "[]");
+      reminders.push({
+        id: `${meeting.id}_${minutesBefore}`,
+        meetingId: meeting.id,
+        reminderTime: reminderTime.toISOString(),
+        minutesBefore: minutesBefore,
+        message: `${meeting.title} starts in ${minutesBefore} minutes`,
+        sent: false
+      });
+      localStorage.setItem("meeting_reminders", JSON.stringify(reminders));
+      console.log(`Reminder scheduled: ${meeting.title} - ${minutesBefore} min before`);
+    }
+  });
+}
+
+// Check and send due reminders
+function checkReminders() {
+  const now = new Date();
+  const reminders = JSON.parse(localStorage.getItem("meeting_reminders") || "[]");
+  const pendingReminders = [];
+  
+  reminders.forEach(reminder => {
+    const reminderTime = new Date(reminder.reminderTime);
+    
+    if (now >= reminderTime && !reminder.sent) {
+      // Send browser notification
+      if ("Notification" in window && Notification.permission === "granted") {
+        const notification = new Notification("StudySync Meeting Reminder", {
+          body: reminder.message,
+          icon: "📅",
+          tag: `reminder-${reminder.meetingId}`
+        });
+        
+        // Auto-close after 10 seconds
+        setTimeout(() => notification.close(), 10000);
+      }
+      
+      // Also show in-app notification
+      showInAppNotification("Meeting Reminder", reminder.message);
+      
+      reminder.sent = true;
+      console.log("Reminder sent:", reminder.message);
+    }
+    
+    // Keep reminders for 24 hours after sending, then clean up
+    const oneDayAfter = new Date(reminderTime.getTime() + 86400000);
+    if (!reminder.sent || now < oneDayAfter) {
+      pendingReminders.push(reminder);
+    }
+  });
+  
+  localStorage.setItem("meeting_reminders", JSON.stringify(pendingReminders));
+}
+
+// Show in-app notification
+function showInAppNotification(title, message) {
+  // Create or get notification area
+  let notificationArea = document.getElementById("notification-area");
+  if (!notificationArea) {
+    notificationArea = document.createElement("div");
+    notificationArea.id = "notification-area";
+    notificationArea.style.cssText = `
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      max-width: 300px;
+    `;
+    document.body.appendChild(notificationArea);
+  }
+  
+  const notification = document.createElement("div");
+  notification.style.cssText = `
+    background: #ff4444;
+    color: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    animation: slideIn 0.3s ease-out;
+  `;
+  
+  notification.innerHTML = `
+    <strong>${title}</strong><br>
+    ${message}
+    <button onclick="this.parentElement.remove()" style="float:right;background:none;border:none;color:white;cursor:pointer;font-size:18px;">×</button>
+  `;
+  
+  notificationArea.appendChild(notification);
+  
+  // Auto-remove after 8 seconds
+  setTimeout(() => {
+    if (notification.parentElement) {
+      notification.remove();
+    }
+  }, 8000);
+}
+
 // Load page
 window.onload = function() {
   loadMeetings();
   loadUserGroups();
+  initializeNotifications(); // ENHANCED: Initialize notification system
 };
