@@ -1,11 +1,3 @@
-Here’s a **single, GitHub-ready Markdown testing package** for StudySync, combining:
-
-1. The **Testing Strategy** (Assignment 3 content, reformatted).
-2. The **Completed 25 Test Cases** (with green checkmarks and actual results).
-3. The **Test Results Summary** and **Tester Sign-off**.
-
-You can save this as `TESTING.md` in your GitHub repo:
-
 ```markdown
 # StudySync Testing Documentation
 
