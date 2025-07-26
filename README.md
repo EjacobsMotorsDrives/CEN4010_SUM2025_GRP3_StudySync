@@ -1,68 +1,86 @@
-# CEN4010_SUM2025_GRP3_StudySync
-FIU CEN4010 group 3 Software engineering class project a study group finder Web App StudySynq
 # 📚 StudySync — Academic Study Group Finder
 
-**Course**: CEN4010  
-**Semester**: Summer 2025  
-**Team**: Eric Jacobs, Juan Diaz-Zuluaga, Joseph Woolley, Erick Cuadra, Cody Chardon  
+**Course:** CEN4010 – Software Engineering  
+**Semester:** Summer 2025  
+**Team:** Eric Jacobs, Juan Diaz-Zuluaga, Joseph Woolley, Erick Cuadra, Cody Chardon  
 
 ---
 
-## 📝 Project Description
-
-**StudySync** is a web application that simplifies the process of finding and joining academic study groups. Designed for both in-person and online students, it provides a structured platform to:
-
-- Register using a .edu email for identity validation
-- Create or discover study groups based on courses and interests
-- Schedule meetings and post messages
-- Integrate with tools like Zoom and Slack for real-time collaboration
-
-Initially built with a **frontend-only simulation using CSV files** in VSCode EDU, the project will later transition to a full-stack deployment on **Ubuntu** or **GoDaddy** with **Node.js/PHP and MySQL** backend support.
+## 🌐 Live Deployment
+- **Live App:** [https://orchid-beguiling-artist-487.vscodeedu.app/index.html](https://orchid-beguiling-artist-487.vscodeedu.app/index.html)
+- **GitHub Repository:** [CEN4010_SUM2025_GRP3_StudySync](https://github.com/EjacobsMotorsDrives/CEN4010_SUM2025_GRP3_StudySync/tree/main)
 
 ---
 
-## ✅ Current Status
+## 📝 Project Overview
 
-- [x] Project Proposal (submitted: May 23, 2025)
-- [x] Software Requirements Document (SRD) — ✅ Completed and converted to Markdown
-- [ ] Software Design Document (SDD) — *DOING*
-- [ ] Coding — *DOING*
-- [ ] Testing — *Pending implementation*
-- [ ] Deployment — *Pending backend selection*
+**StudySync** is a web-based platform designed to help college students **find, join, and manage academic study groups**. It offers:
 
----
+- **.edu Email Registration** for verified student access  
+- **Group Browsing & Creation** by course or interest  
+- **Scheduling & Calendar Integration** for study sessions  
+- **Group Message Boards** for quick communication  
+- Planned integration with **MySQL backend and REST APIs** for production deployment.
 
-## 📌 TODOs
-
-### 🔧 Design Phase
-- [ ] Draft Software Design Document (DD)
-  - [ ] High-level architecture (likely: MVC or Client–Server)
-  - [ ] Class diagram and sequence diagrams for UC1–UC5
-  - [ ] UI wireframes or flowcharts
-  - [ ] Data Flow and ER Diagrams
-- [ ] Define core data structures (CSV format schema for dev, MySQL schema for prod)
-- [ ] Document external API integration details (Zoom, Slack)
-
-### 💻 Development Phase
-- [X] Set up VSCode EDU frontend project #DONE
-- [ ] Simulate CSV file handling for fake backend
-- [ ] Build basic UI: Login, Register, Group Browser
-- [ ] Implement UC1: Register + email format check
-- [ ] Implement UC2–UC5 stubs with mock data
-
-### 🔁 Backend Planning
-- [ ] Define data models and MySQL schema
-- [ ] Choose backend stack (Node.js or PHP)
-- [ ] Set up Ubuntu dev environment
-- [ ] Explore GoDaddy deployment options
-
-### ✅ Submission Timeline
-- [X] SRD Due: ✅ Submitted `June 14, 2025`
-- [ ] Frontend Demo Due: `July 1, 2025`
-- [ ] Backend Integration: `July 14, 2025`
-- [ ] User Testing: `July 21, 2025`
-- [ ] Final Demo & Submission: `August 2, 2025`
+Originally developed as a **frontend-only app** using CSV/localStorage in VSCode EDU, it is transitioning to a **full-stack system** hosted on **Ubuntu/GoDaddy** with Node.js/PHP and MySQL.
 
 ---
 
+## 📂 Documentation
 
+- [**Software Requirements Document (SRD)**](./SRD.md)  
+- [**Design Document (DD)**](./DD.md)  
+- [**Testing Documentation (Strategy + Results)**](./TESTING.md)  
+- [**User Guide**](./USER_GUIDE.md)
+
+---
+
+## ✅ Project Status
+
+- [x] Project Proposal (submitted: May 23, 2025)  
+- [x] Software Requirements Document (SRD) — Completed  
+- [x] Software Design Document (DD) — Completed  
+- [x] Coding — Frontend complete, backend pending  
+- [x] Testing — 25/25 test cases passed (see [Testing Docs](./TESTING.md))  
+- [x] Deployment — Live frontend deployed (link above)  
+
+---
+
+## 📌 Upcoming Work
+
+### Backend Integration (In Progress)
+- Implement **MySQL schema** and backend logic (Node.js or PHP).  
+- Connect frontend to REST APIs for **group management, meetings, and messaging**.  
+- Finalize **GoDaddy/Ubuntu deployment**.
+
+---
+
+## 📅 Submission Timeline
+
+- **SRD Submitted:** June 14, 2025  
+- **Frontend Demo Delivered:** July 1, 2025  
+- **User Testing Completed:** July 21, 2025  
+- **Final Demo & Submission:** August 2, 2025  
+
+---
+
+## 👥 Team Roles
+
+- **Eric Jacobs:** Frontend/UI Development, Project Coordination  
+- **Juan Diaz-Zuluaga:** API Design, Documentation  
+- **Joseph Woolley:** Testing Lead, QA Documentation  
+- **Erick Cuadra:** Backend Research, User Support  
+- **Cody Chardon:** Calendar & Notification Features
+
+---
+
+## Quick Links
+
+- [Live App](https://orchid-beguiling-artist-487.vscodeedu.app/index.html)  
+- [User Guide](./USER_GUIDE.md)  
+- [Testing Docs](./TESTING.md)  
+
+---
+
+### License
+This project is for **educational purposes** under the CEN4010 course at Florida International University.
