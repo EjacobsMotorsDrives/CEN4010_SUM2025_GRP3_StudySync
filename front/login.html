@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StudySync - Login</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<header>
+  <h1>StudySync</h1>
+  <nav>
+    <ul>
+<li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="groups.html">Browse Groups</a></li>
+        <li><a href="create-group.html">Create Group</a></li>
+        <li><a href="calendar.html">Calendar</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="login.html">Logout</a></li>    </ul>
+  </nav>
+</header>
+
+  <main>
+    <h2>Login</h2>
+    <form id="login-form">
+  <label>Email: <input type="email" id="login-email" required></label><br>
+  <label>Password: <input type="password" id="login-password" required></label><br>
+  <button type="submit">Login</button>
+</form>
+
+    <p>
+      Don’t have an account? <a href="register.html">Register here</a>.
+    </p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 StudySync</p>
+  </footer>
+  <script src="auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,300 @@
+body {
+  margin: 0;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f8fa;
+  color: #333;
+}
+
+header {
+  background: #007acc;
+  color: white;
+  padding: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+main {
+  padding: 1rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #e5e7fd;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Group card styles */
+.group-card {
+  border: 1px solid #ddd;
+  background: #fff;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.group-card h3 {
+  margin-top: 0;
+  color: #007acc;
+}
+
+.group-card button {
+  padding: 0.5rem 1rem;
+  background: #007acc;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.group-card button:hover {
+  background: #005fa3;
+}
+
+form {
+  border: 3px solid #f1f1f1;
+}
+
+button {
+  background-color: #007acc;
+  color: white;
+  padding: 8px 12px;
+}
+
+input {
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+  color: var(--text-dark);
+}
+
+.content {
+  text-align: center;
+  font-size: 3rem;
+}
+
+select {
+  padding: 6px 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+textarea {
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+  color: var(--text-dark);
+}
+
+/* Calendar styles for StudySync */
+
+.calendar-container {
+  display: flex;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.calendar-main {
+  flex: 2;
+}
+
+.sidebar {
+  flex: 1;
+  background: #f5f5f5;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.calendar-header h2 {
+  margin: 0;
+  color: #007acc;
+}
+
+.calendar-header button {
+  padding: 10px 15px;
+  background: #007acc;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.calendar-header button:hover {
+  background: #005fa3;
+}
+
+.calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.calendar-table th {
+  background: #007acc;
+  color: white;
+  padding: 12px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.calendar-table td {
+  width: 14.28%;
+  height: 80px;
+  vertical-align: top;
+  border: 1px solid #ddd;
+  padding: 8px;
+  position: relative;
+}
+
+.calendar-table td:hover {
+  background: #f0f0f0;
+}
+
+.has-meeting {
+  background: #fff3cd;
+  font-weight: bold;
+}
+
+.meeting-dot {
+  color: #007acc;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.sidebar h3 {
+  margin: 0 0 15px 0;
+  color: #333;
+}
+
+.meeting-card {
+  background: white;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border-left: 3px solid #007acc;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.meeting-card div {
+  margin-bottom: 4px;
+}
+
+.meeting-card div:first-child {
+  font-weight: bold;
+  color: #007acc;
+}
+
+.meeting-form {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  max-width: 400px;
+}
+
+.meeting-form h3 {
+  margin-top: 0;
+  color: #007acc;
+}
+
+.meeting-form input,
+.meeting-form select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  margin-top: 5px;
+  box-sizing: border-box;
+}
+
+.meeting-form button {
+  padding: 10px 15px;
+  margin: 10px 5px 0 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.meeting-form button:first-of-type {
+  background: #007acc;
+  color: white;
+}
+
+.meeting-form button:first-of-type:hover {
+  background: #005fa3;
+}
+
+.meeting-form button:last-of-type {
+  background: #6c757d;
+  color: white;
+}
+
+.meeting-form button:last-of-type:hover {
+  background: #545b62;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .calendar-container {
+    flex-direction: column;
+  }
+  
+  .calendar-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .calendar-table td {
+    height: 60px;
+    font-size: 14px;
+  }
+}
